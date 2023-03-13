@@ -1,5 +1,3 @@
-Trial for repo name change
-
 To run json-server
 npx json-server --watch data/db.json --port 8000
 
