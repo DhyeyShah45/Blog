@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('mario');
+  const [author, setAuthor] = useState('Hulk');
   const history = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { title, body, author };
 
-    fetch('http://localhost:8000/blogs/', {
+    fetch('http://localhost:8000/blog/add-new-blog', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog)
@@ -28,6 +28,7 @@ const Create = () => {
         <label>Blog title:</label>
         <input 
           type="text" 
+          name = "title"
           required 
           value={title}
           onChange={(e) => setTitle(e.target.value)}

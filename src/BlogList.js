@@ -5,8 +5,9 @@ const BlogList = ({blogs,title,handleDelete}) => {
     <div className="blog-list">
       <h2>{title}</h2>
       {blogs.map((blog)=>(
-          <div className="blog-preview" key={blog.id}>
-            <Link to={`/blogs/${blog.id}`}>
+          <div className="blog-preview" key={blog._id}>
+            {/* {console.log(blog._id)} */}
+            <Link to={`/blogs/${blog._id}`}>
               <h2>{blog.title}</h2>
               <p>{blog.author}</p>
             </Link>
