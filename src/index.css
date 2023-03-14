@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 /* base styles */
 * {
@@ -28,6 +28,24 @@
 .navbar a:hover {
   color: #f1356d;
 }
+.navbar button {
+  background: #fff;
+  color: #f1356d;
+  border: 1;
+  border-color: #f1356d;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.navbar button:hover {
+  background: #f1356d;
+  color: #fff;
+  border: 1;
+  border-color: #f1356d;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 .content {
   max-width: 600px;
   margin: 40px auto;
@@ -41,14 +59,14 @@
   border-bottom: 1px solid #fafafa;
 }
 .blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .blog-preview h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 8px;
 }
-.blog-preview a{
+.blog-preview a {
   text-decoration: none;
 }
 
@@ -85,7 +103,9 @@
   color: #f1356d;
   margin-bottom: 30px;
 }
-.create input, .create textarea, .create select {
+.create input,
+.create textarea,
+.create select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -100,4 +120,50 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+/* auth forms */
+form.signup,
+form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+label,
+input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background: var(--primary);
+  border: 0;
+  background-color: #f1356d;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+input.error {
+  border: 1px solid var(--error);
 }
