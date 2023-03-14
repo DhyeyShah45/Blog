@@ -1,6 +1,6 @@
 
-import BlogList from "./BlogList";
-import useFetch from "./useFetch";
+import BlogList from "../components/BlogList";
+import useFetch from "../hooks/useFetch";
 const Home = () => {
   const url = "/blogs";
   const {data:blogs,isPending,error} = useFetch(url)
