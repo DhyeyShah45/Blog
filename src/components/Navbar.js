@@ -13,6 +13,7 @@ const Navbar = () => {
     <nav className="navbar">
       <Link to="/">
         <h1>Blog here!</h1>
+        {user && <div>{user.name}</div>}
       </Link>
       <div className="links">
         {!user ? (

@@ -1,6 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../hooks/useAuthContext";
+
 import useFetch from "../hooks/useFetch";
 const BlogDetails = () => {
+  const {user} = useAuthContext()
   const url = "/blog/";
   const {id} = useParams();
 
@@ -10,6 +13,9 @@ const BlogDetails = () => {
   const handleClick = () => {
     fetch("/blog/" + blog._id, {
       method: "DELETE",
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+      }
     }).then(() => {
       history("/");
     });

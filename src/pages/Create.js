@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Create = () => {
+  const {user} = useAuthContext()
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('Hulk');
+  const [visibilty, setVisibilty] = useState('Private');
   const history = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { title, body, author };
+    const blog = { title, body, visibilty };
 
     fetch('/blog/add-new-blog', {
       method: 'POST',
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",'Authorization': `Bearer ${user.token}` },
       body: JSON.stringify(blog)
     }).then(() => {
       // history.go(-1);
@@ -39,13 +41,13 @@ const Create = () => {
           value={body}
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
-        <label>Blog author:</label>
+        <label>Blog visibilty:</label>
         <select
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          value={visibilty}
+          onChange={(e) => setVisibilty(e.target.value)}
         >
-          <option value="Hulk">Hulk</option>
-          <option value="Khubi">Khubi</option>
+          <option value="Public">Public</option>
+          <option value="Private">Private</option>
         </select>
         <button>Add Blog</button>
       </form>

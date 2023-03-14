@@ -1,21 +1,30 @@
 import BlogList from "../components/BlogList";
 import useFetch from "../hooks/useFetch";
 const Home = () => {
-  const url = "/blogs";
-  const {data:blogs,isPending,error} = useFetch(url)
+  const url_for_all = "/blogs";
+  const {data:blogs,isPending,error} = useFetch(url_for_all)
+
+  const url_for_author = "/blogs/author"
+  const {data:blogs_author,isPending:isPending_author,error:error_author} = useFetch(url_for_author)
 
 
   return (
     <div className="home">
-      {error && <div>{error}</div>}
-      {isPending && <div>Loading...</div>}
+      {(error || error_author) && <div>{error}</div>}
+      {(isPending || isPending_author) && <div>Loading...</div>}
       {blogs && (
         <BlogList
           blogs={blogs}
           title="All Blogs!"
-
         />
       )}
+      {blogs_author && (
+        <BlogList
+          blogs={blogs_author}
+          title="Your Blogs!"
+        />
+      )}
+        
     </div>
   );
 };
