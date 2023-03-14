@@ -1,14 +1,14 @@
 import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "./useFetch";
 const BlogDetails = () => {
-  const url = "http://localhost:8000/blog/";
+  const url = "/blog/";
   const {id} = useParams();
 
   const { data: blog, isPending, error } = useFetch(url + id);
   const history = useNavigate();
 
   const handleClick = () => {
-    fetch("http://localhost:8000/blog/" + blog._id, {
+    fetch("/blog/" + blog._id, {
       method: "DELETE",
     }).then(() => {
       history("/");
