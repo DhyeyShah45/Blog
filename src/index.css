@@ -52,10 +52,19 @@
   padding: 20px;
 }
 
+.home {
+  display: flex;
+  justify-content: space-around;
+}
+
+.blog-list {
+  width: 50%;
+}
 /* blog previews / list */
 .blog-preview {
   padding: 10px 16px;
   margin: 20px 0;
+  max-width: auto;
   border-bottom: 1px solid #fafafa;
 }
 .blog-preview:hover {
