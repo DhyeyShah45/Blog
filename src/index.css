@@ -111,10 +111,12 @@
 }
 
 /* create new blog form */
-.create {
-  max-width: 400px;
-  margin: 0 auto;
+.create form {
+  display: block;
+  margin :  auto;
+  max-width: 60%;
   text-align: center;
+  padding: auto;
 }
 .create label {
   text-align: left;
@@ -123,7 +125,8 @@
 .create h2 {
   font-size: 20px;
   color: #f1356d;
-  margin-bottom: 30px;
+  margin: 10% auto 20px;
+  text-align: center;
 }
 .create input,
 .create textarea,
@@ -139,7 +142,7 @@
   background: #f1356d;
   color: #fff;
   border: 0;
-  padding: 8px;
+  padding: 8px 20px;
   border-radius: 8px;
   cursor: pointer;
 }
