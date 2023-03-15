@@ -10,7 +10,7 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  max-width: auto;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
@@ -47,7 +47,7 @@
   cursor: pointer;
 }
 .content {
-  max-width: 600px;
+  max-width: 80%;
   margin: 40px auto;
   padding: 20px;
 }
@@ -80,12 +80,25 @@
   margin: 20px 0;
 }
 .blog-details button {
-  background: #f1356d;
-  color: #fff;
+  background: #fff;
+  border-color: #f1356d;
   border: 0;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.blog-details-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: auto;
+  margin-left: 30px;
+}
+
+.blog-details-header .action {
+  margin-left: auto;
+  padding-top:10px;
 }
 
 /* create new blog form */
