@@ -10,7 +10,7 @@ const EditForm = ({blog,token}) => {
     e.preventDefault();
     const data = { title, body, visibilty };
     // console.log(data);
-    fetch("/blog/" + blog._id, {
+    fetch("https://blog-here.netlify.app/blog/" + blog._id, {
       method: "PUT",
       headers: { "Content-Type": "application/json",'Authorization': `Bearer ${token}` },
       body:JSON.stringify(data)

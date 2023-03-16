@@ -26,7 +26,7 @@ const useFetch = (url) => {
       })
       .catch((err) => {
         // bypassing fetch errors
-        console.log(err.message);
+        // console.log(err.message);
         if (err.name === "AbortError") {
           abortCont.abort();
           console.log("Fetch Aborted");

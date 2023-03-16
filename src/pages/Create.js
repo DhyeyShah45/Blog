@@ -13,11 +13,11 @@ const Create = () => {
     e.preventDefault();
     const blog = { title, body, visibilty };
 
-    fetch("/blog/add-new-blog", {
+    fetch("https://blog-here.netlify.app/blog/add-new-blog", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${user.token}`,
+        "Authorization": `Bearer ${user.token}`,
       },
       body: JSON.stringify(blog),
     }).then(() => {
