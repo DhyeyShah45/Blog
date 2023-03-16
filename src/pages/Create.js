@@ -13,7 +13,7 @@ const Create = () => {
     e.preventDefault();
     const blog = { title, body, visibilty };
 
-    fetch("https://blog-here.netlify.app/blog/add-new-blog", {
+    fetch("https://blog-here.onrender.com/blog/add-new-blog", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

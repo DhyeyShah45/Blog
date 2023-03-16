@@ -8,7 +8,7 @@ import { useState } from "react";
 const BlogDetails = () => {
   
   const { user } = useAuthContext();
-  const url = "https://blog-here.netlify.app/blog/";
+  const url = "https://blog-here.onrender.com/blog/";
   const { id } = useParams();
   const [permission, setPermission] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -18,7 +18,7 @@ const BlogDetails = () => {
   
   const handleDelete = () => {
     if (blog.author === user.name) {
-      fetch("https://blog-here.netlify.app/blog/" + blog._id, {
+      fetch("https://blog-here.onrender.com/blog/" + blog._id, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${user.token}`,
