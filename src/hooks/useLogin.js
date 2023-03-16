@@ -9,7 +9,6 @@ export const useLogin = () => {
   const login = async (email, password) => {
     setIsLoading(true);
     setError(null);
-
     const response = await fetch("/user/login", {
       method: "POST",
       headers: {
@@ -17,11 +16,13 @@ export const useLogin = () => {
         "Accept": "application/json",
       },
       body: JSON.stringify({ email, password }),
-    });
+    }).catch((err)=>console.log(err));
 
+    console.log(response);
+    
     // Reads the response as json.
     const json = await response.json();
-
+    
     if (!response.ok) {
       setIsLoading(false);
       setError(json.error);
