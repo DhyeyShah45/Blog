@@ -148,6 +148,7 @@
 }
 
 
+
 /* auth forms */
 form.signup,
 form.login {
@@ -176,6 +177,16 @@ form button {
   border: 0;
   background-color: #f1356d;
   color: #fff;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form button:disabled{
+  background: var(--primary);
+  border: 0;
+  background-color: grey;
+  color: #000;
   font-size: 1rem;
   padding: 10px;
   border-radius: 4px;

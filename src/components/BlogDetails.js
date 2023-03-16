@@ -6,14 +6,16 @@ import useFetch from "../hooks/useFetch";
 import EditForm from "./EditForm";
 import { useState } from "react";
 const BlogDetails = () => {
+  
   const { user } = useAuthContext();
   const url = "/blog/";
   const { id } = useParams();
   const [permission, setPermission] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const { data: blog, isPending, error } = useFetch(url + id);
   const navigate = useNavigate();
-
+  const { data: blog, isPending, error } = useFetch(url + id);
+  
   const handleDelete = () => {
     if (blog.author === user.name) {
       fetch("/blog/" + blog._id, {
@@ -25,20 +27,22 @@ const BlogDetails = () => {
         navigate("/");
       });
     } else {
-      alert("You can only delete your blogs");
+      setErrorMessage("You can only delete your blogs");
+      setTimeout(()=>{setErrorMessage("")},2000);
     }
   };
   const handleEdit = () => {
     if (blog.author === user.name) {
       setPermission(true);
     } else {
-      alert("You can edit your blog only!");
+      setErrorMessage("You can edit your blog only!");
+      setTimeout(()=>{setErrorMessage("")},2000);
     }
   };
   return (
     <>
-      <div className="blog-details">
-        {}
+      <div className="blog-details"> 
+        {errorMessage && (<div className="error">{errorMessage}</div>)}
         {error && <div>{error}</div>}
         {isPending && <div>Loading...</div>}
         {blog && (

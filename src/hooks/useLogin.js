@@ -18,7 +18,7 @@ export const useLogin = () => {
       body: JSON.stringify({ email, password }),
     }).catch((err)=>console.log(err));
 
-    console.log(response);
+    // console.log(response);
     
     // Reads the response as json.
     const json = await response.json();
