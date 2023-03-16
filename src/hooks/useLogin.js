@@ -9,7 +9,7 @@ export const useLogin = () => {
   const login = async (email, password) => {
     setIsLoading(true);
     setError(null);
-    const response = await fetch("/user/login", {
+    const response = await fetch("https://blog-here.onrender.com/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
