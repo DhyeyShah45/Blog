@@ -1,4 +1,4 @@
-# Blog Here!
+# Blog Here! [![Netlify Status](https://api.netlify.com/api/v1/badges/915512d7-424e-4e9e-8b0f-02eb36d052f7/deploy-status)](https://blog-here.netlify.app/)
 It is a website which allows you to create blogs and post them.
 The blogs can be shared with public as well.
 
